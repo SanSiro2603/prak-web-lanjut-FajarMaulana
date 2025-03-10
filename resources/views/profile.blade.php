@@ -12,7 +12,7 @@
     <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
 
         <div class="flex justify-center mb-3">
-            <img src="assets/img/fajar.jpg" 
+            <img src="/assets/img/fajar.jpg" 
             alt="Profile" 
             class="w-60 h-60 rounded-full border-4 border-gray-300 object-cover">
        
