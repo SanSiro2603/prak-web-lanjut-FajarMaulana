@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Kelas;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+
 
 class UserController extends Controller
 {
@@ -26,7 +28,7 @@ class UserController extends Controller
         return view('create_user');
         }
     
-        public function store(Request $request)
+        public function store(UserRequest $request)
 
 {
     $validatedData = $request->validate([
