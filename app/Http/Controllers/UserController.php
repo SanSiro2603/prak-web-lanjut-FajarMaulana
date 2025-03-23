@@ -10,6 +10,24 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
+    public $userModel;
+    public $kelasModel;
+
+    public function __construct()
+    {
+    $this->userModel = new UserModel();
+    $this->kelasModel = new Kelas();
+    }
+    public function index()
+     {
+        $data = [
+        'title' => 'Create User',
+        'users' => $this->userModel->getUser(),
+        ];
+        
+        return view('list_user',$data);
+    }
+
     public function profile($nama = "Fajar Maulana", $kelas = "D3 Manajemen Informatika", $npm = "2307051006") 
     { 
         $data = [ 
@@ -21,12 +39,26 @@ class UserController extends Controller
         return view('profile', $data); 
     }
 
-    public function create(){
-        return view('create_user', [ 'kelas' => Kelas::all(),
-        ]);
+    // public function create(){
+    //     return view('create_user', [ 'kelas' => Kelas::all(),
+    //     ]);
 
-        return view('create_user');
-        }
+    //     return view('create_user');
+    //     }
+
+    public function create()
+    {
+        $kelasModel = new Kelas();
+
+        $kelas = $kelasModel->getKelas();
+
+        $data = [
+            'title' => 'Create User',
+            'kelas' => $kelas,
+        ];
+
+        return view('create_user',$data);
+}
     
         public function store(UserRequest $request)
 

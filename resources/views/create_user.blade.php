@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends('layouts.app')
+
+@section('content')
+
+
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form User</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-r from-indigo-500 to-green-600 flex items-center justify-center min-h-screen">
+    
+</head> -->
 
+<body class="bg-gradient-to-r from-indigo-500 to-green-600 flex items-center justify-center min-h-screen">
+<script src="https://cdn.tailwindcss.com"></script>
     <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-md">
         <h2 class="text-3xl font-bold text-center text-indigo-600 mb-6">Tambah User</h2>
 
@@ -45,6 +49,6 @@
             <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-2 rounded-lg hover:bg-indigo-700 transition">Submit</button>
         </form>
     </div>
-
 </body>
-</html>
+
+@endsection
