@@ -51,6 +51,7 @@
                                             class="bg-yellow-400 text-white px-3 py-1 rounded-lg hover:bg-yellow-500 transition duration-150">
                                             Detail
                                         </a>
+                                    <a href="{{ route('user.edit', $user ['id']) }}" class="btn btn-warning btn-sm">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach
