@@ -38,14 +38,16 @@
                                     <td class="py-3 px-4">{{ $user->npm }}</td>
                                     <td class="py-3 px-4">
                                         {{ $user->kelas->nama_kelas ?? '-' }}
-                                    </td>
                                     <td class="py-3 px-4">
-                                        @if ($user->foto)
-                                            <img src="{{ asset($user->foto) }}" alt="Foto {{ $user->nama }}" class="w-12 h-12 object-cover rounded-full mx-auto">
-                                        @else
-                                            <span class="text-gray-400 italic">Tidak ada</span>
-                                        @endif
-                                    </td>
+                                    @if ($user->foto && file_exists(storage_path('app/public/upload/img/' . $user->foto)))
+                                        <img src="{{ asset('storage/upload/img/' . $user->foto) }}" 
+                                            alt="Foto {{ $user->nama }}" 
+                                            class="mx-auto block rounded-2" 
+                                            style="width: 60px; height: 60px; object-fit: cover;">
+                                    @else
+                                        <span class="text-muted fst-italic">Tidak ada</span>
+                                    @endif
+                                </td>
                                     <td class="py-3 px-4">
                                         <a href="{{ route('users.show', $user->id) }}"
                                             class="bg-yellow-400 text-white px-3 py-1 rounded-lg hover:bg-yellow-500 transition duration-150">
